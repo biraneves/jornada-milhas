@@ -1,5 +1,4 @@
 .app-header {
-
   button {
     margin: 0 16px;
   }
@@ -14,8 +13,20 @@
     padding: 0 256px;
   }
 
+  .links-toolbar > * {
+    margin-right: 20px;
+  }
+
+  .links-toolbar > *:first-child {
+    margin-right: 0;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
   .mat-mdc-outlined-button:not(:disabled) {
-    border-color: white;
+    border-color: #673ab7;
+    color: #673ab7;
   }
 }
-
