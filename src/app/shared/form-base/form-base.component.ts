@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -13,6 +13,8 @@ import { UnidadeFederativa } from 'src/app/core/types/type';
   styleUrls: ['./form-base.component.scss'],
 })
 export class FormBaseComponent implements OnInit {
+  @Input() perfilComponent!: boolean;
+  @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(
     null,
@@ -36,5 +38,9 @@ export class FormBaseComponent implements OnInit {
       confirmarSenha: [null, [Validators.required, Validators.minLength(3)]],
       aceitarTermos: [null, [Validators.requiredTrue]],
     });
+  }
+
+  executarAcao() {
+    this.acaoClique.emit();
   }
 }
