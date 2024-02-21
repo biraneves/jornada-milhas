@@ -14,8 +14,8 @@ export class TokenService {
     localStorage.removeItem(KEY);
   }
 
-  retornarToken(): string | null {
-    return localStorage.getItem(KEY);
+  retornarToken(): string {
+    return localStorage.getItem(KEY) ?? '';
   }
 
   possuiToken(): boolean {
