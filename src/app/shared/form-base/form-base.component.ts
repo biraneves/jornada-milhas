@@ -15,7 +15,9 @@ import { FormValidations } from '../form-validations';
   styleUrls: ['./form-base.component.scss'],
 })
 export class FormBaseComponent implements OnInit {
-  @Input() perfilComponent!: boolean;
+  @Input() perfilComponent: boolean = false;
+  @Input() titulo: string = 'Crie sua conta';
+  @Input() textoBotao: string = 'CADASTRAR';
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(
